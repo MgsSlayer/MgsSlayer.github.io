@@ -13,26 +13,29 @@
     <link rel="stylesheet" href="mediaqueries.css" />
 
   </head>
-
   <body>
+  <div class="container">
+    <div class="main_body"> 
+
     <div class="btn-ctn">
         <!-- <button class="mode-btn" onclick="darkmode()">Dark Mode</button> -->
         <i class="fas fa-moon dark-mode-icon" onclick="darkmode()"></i>
     </div> 
     
+    <!----- DESKTOP NAVIGATION ----->
     <nav id="desktop-nav">
       <div class="logo">Esio Oboho</div>
-      <div>
+      <div class="top_nav">
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
-          
         </ul>
       </div>
     </nav>
-
+ 
+    <!----- MOBILE/HAMBURGER NAV ----->
     <nav id="hamburger-nav">
       <div class="logo">Esio Oboho</div>
       <div class="hamburger-menu">
@@ -50,8 +53,8 @@
       </div>
     </nav>
 
-    <!-- PROFILE SECTION -->
-    <section id="profile">
+    <!----- PROFILE SECTION ----->
+    <section id="profile" class="profile">
       <div class="section__pic-container">
         <img src="./assets/profile-pic.png" alt="profile picture" id="profile_pic" />
       </div>
@@ -60,15 +63,8 @@
         <h1 class="title"><span class="name_span">Esio</span> Oboho</h1>
         <p class="section__text__p2 typing">Web Developer</p>
         <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('./assets/resume-web.pdf')"
-          >
-            Download CV
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='#contact'">
-            Contact Info
-          </button>
+          <button class="btn btn-color-2" onclick="window.open('./assets/resume-web.pdf')">Download CV</button>
+          <button class="btn btn-color-1" onclick="location.href='#contact'">Contact Info</button>
         </div>
         <div id="socials-container">
           <i class="fab fa-linkedin social-icon icon-size" onclick="location.href='https://linkedin.com/in/michael-oboho-68b1a4310'"></i>
@@ -77,20 +73,20 @@
       </div>
     </section>
 
-    <!-- ABOUT SECTION -->
+    <!----- ABOUT SECTION ----->
     <section id="about">
       <p class="section__text__p1">Get To Know More</p>
       <h1 class="title">About Me</h1>
       <div class="section-container">
         <div class="section__pic-container">
-          <img src="./assets/about-pic.jpg" alt="Profile picture" class="about-pic"/>
+          <img src="./assets/about-pic.jpg" alt="Profile picture" id="about-pic"/>
         </div>
         <div class="about-details-container">
           <div class="about-containers">
             <div class="details-container">
               <img src="./assets/experience.png" alt="Experience icon" class="icon"/>
               <h3>Experience</h3>
-              <p>2+ years <br />Web Development</p>
+              <p>4+ years <br />Web Development</p>
             </div>
             <div class="details-container">
               <img src="./assets/education.png" alt="Education icon" class="icon"/>
@@ -100,7 +96,7 @@
           </div>
           <div class="text-container">
             <p>
-              I'm a professional web developer with 2 years of experience, and I pride myself on producing high-quality work. 
+              I'm a professional web developer with 4 years of experience, and I pride myself on producing high-quality work. 
               I've developed a strong skill set in both front-end and back-end technologies, allowing me to create dynamic websites 
               and web applications that are not only functional but also user-friendly. Attention to detail is important to me, and 
               I always strive to deliver clean, efficient code. I’m passionate about what I do and always aim to exceed expectations
@@ -109,15 +105,10 @@
           </div>
         </div>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-      />
+      <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'"/>
     </section>
 
-    <!-- EXPERIENCE SECTION -->
+    <!----- EXPERIENCE SECTION ----->
     <section id="experience">
       <p class="section__text__p1">Explore My</p>
       <h1 class="title">Experience</h1>
@@ -232,11 +223,11 @@
       <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'"/>
     </section>
 
-    <!-- PROJECT SECTION -->
+    <!----- PROJECT SECTION ----->
     <section id="projects">
       <p class="section__text__p1">Browse My Recent</p>
       <h1 class="title">Projects</h1>
-      <div class="container">
+      
         <div class="gallerybox">
             <div class="img-box"><h3>Project One</h3></div>
             <div class="img-box"><h3>Project Two</h3></div>
@@ -245,8 +236,7 @@
         </div>
     </section>
 
-  
-    <!-- CONTACT SECTION -->
+    <!----- CONTACT SECTION ----->
     <section id="contact">
       <p class="section__text__p1">Get in Touch</p>
       <h1 class="title">Contact Me</h1>
@@ -257,19 +247,23 @@
         </div>
         <div class="contact-info-container">
           <i class="fab fa-linkedin social-icon icon-size contact-icon"></i>
-          
           <p><a href="https://linkedin.com/in/michael-oboho-68b1a4310">LinkedIn</a></p>
         </div>
       </div>
-      <div id="or">
-        <p>Or</p>
-      </div>
+        <p id="or">Or</p>
       <div id="message-me">
-        <textarea id="txt-area">Send me a message</textarea>
-        <button class="mess-me">Message Me</button>
+        <form id="emailForm" action="/send_email" method="post">
+          <label for="subject"></label>
+          <input id="subject" name="subject" placeholder="subject" type="text"></input>
+          <label for="message"></label>
+          <textarea id="message" name="message" placeholder="Send me a message"></textarea>
+          <button type="submit" id="mess-me" value="Message Me">Message Me</button>
+        </form>
       </div>
+      <span id="alertBox"></span>
     </section>
 
+    <!----- FOOTER ----->
     <footer>
       <nav>
         <div class="nav-links-container">
@@ -283,8 +277,20 @@
       </nav>
       <p>Copyright &#169; 2023 Esio Oboho. All Rights Reserved.</p>
     </footer>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js" integrity="sha512-+2pW8xXU/rNr7VS+H62aqapfRpqFwnSQh9ap6THjsm41AxgA0MhFRtfrABS+Lx2KHJn82UOrnBKhjZOXpom2LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </div> 
+</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js" integrity="sha512-+2pW8xXU/rNr7VS+H62aqapfRpqFwnSQh9ap6THjsm41AxgA0MhFRtfrABS+Lx2KHJn82UOrnBKhjZOXpom2LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <script>
+      if (typeof anime === 'undefined') {
+document.write('<script src="assets/anime-master/lib/anime.min.js"><\/script>');
+      }
+    </script>
     <script src="script.js"></script>
-   
+    
+    
   </body>
 </html>
+
+

@@ -45,13 +45,16 @@
   .about-containers {
     margin-top: 0;
   }
+  #subject{
+    width: auto;
+  }
 }
 
 @media screen and (max-width: 600px) {
-  #contact,
+  /* #contact,
   footer {
-    height: 40vh;
-  }
+    min-height: 40vh;
+  } */
   #contact{
     margin-top: 1.5rem;
   }
@@ -113,8 +116,11 @@
   #message-me textarea{
     width: 15rem;
   }
-  .mess-me{
+  #mess-me{
     margin-bottom: 3rem;
+  }
+  #subject{
+    width: auto;
   }
 }
 
@@ -123,13 +129,10 @@
   width: 75px;
   height: 500px;
   margin: 5px;
-  /* border: 1px solid black; */
   border-radius: 50px;
-  /*background: url(images/img2.jpg);*/
   background-size: cover;
   background-position: center;
   position: relative;
   transition: width .5s;
-
 }
 }
