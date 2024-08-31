@@ -27,6 +27,23 @@ a,
   transition: all 300ms ease;
 }
 
+.btn-ctn{
+  display: flex;
+  justify-content: right;
+}
+
+.mode-btn{
+  margin: 0.5rem 0.5rem 0 0;
+  border: none;
+  outline: none;
+}
+
+.dark-mode-icon {
+  font-size: 1.5rem;
+  margin: 0.5rem 0.5rem 0 0;
+}
+
+
 /* DESKTOP NAV */
 
 nav,
@@ -178,7 +195,7 @@ section {
   margin: auto 0;
 }
 
-#profile-pic{
+#profile_pic{
   border-radius: 50%;
   box-shadow: 0 0 20px 5px rgba(255, 140, 0, 0.5);
 }
@@ -218,6 +235,12 @@ section {
 .icon {
   cursor: pointer;
   height: 2rem;
+  border-radius: 50%;
+}
+
+.icon-size{
+  cursor: pointer;
+  font-size: 2rem;
 }
 
 /* BUTTONS */
@@ -315,6 +338,7 @@ section {
 .section-container {
   gap: 4rem;
   height: 80%;
+  margin-top: 1rem;
 }
 
 .section__pic-container {
@@ -371,24 +395,24 @@ article .icon {
 }
 
 .per-basic{
-  width: 4.5rem;
+  width: 6rem;
   height: 0.5rem;
   border-radius: 5px;
-  background-color: rgb(255, 123, 0);
+  background: linear-gradient(to right, #ff105f, #ffad06);
 }
 
 .per-inter{
   width: 8rem;
   height: 0.5rem;
   border-radius: 5px;
-  background-color: rgba(16, 16, 250, 0.767);
+  background: linear-gradient(to right, #ff105f, #ffad06);
 }
 
 .per-full{
   width: 9rem;
   height: 0.5rem;
   border-radius: 5px;
-  background-color: rgb(0, 109, 6);
+  background: linear-gradient(to right, #ff105f, #ffad06);
 }
 
 /* PROJECTS SECTION */
@@ -402,26 +426,63 @@ article .icon {
   background: rgb(250, 250, 250);
 }
 
-.project-img {
-  border-radius: 2rem;
-  width: 90%;
-  height: 90%;
+.gallerybox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#first-project{
-  margin-top: 10%;
-  margin-bottom: 15%;
+.img-box{
+    width: 150px;
+    height: 500px;
+    margin: 10px;
+    /* border: 1px solid black; */
+    border-radius: 50px;
+    background: url(/assets/project-1.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    transition: width .5s;
+
 }
 
-.project-title {
-  margin: 1rem;
-  color: black;
+.img-box:nth-child(2){
+    background: url(assets/project-2.png);
+    background-size: cover;
+    background-position: center;
 }
 
-.project-btn {
-  color: black;
-  border-color: rgb(163, 163, 163);
+.img-box:nth-child(3){
+    background: url(assets/project-3.png);
+    background-size: cover;
+    background-position: center;
 }
+
+.img-box:nth-child(4){
+    background: url(images/img3.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.img-box h3{
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+    opacity: 0;
+    transition: opacity .5s, bottom .5s;
+}
+
+.img-box:hover{
+    width: 500px;
+    cursor: pointer;
+}
+
+.img-box:hover h3{
+    opacity: 1;
+    bottom: 25px;
+}
+
 
 /* CONTACT */
 
@@ -459,9 +520,9 @@ article .icon {
   cursor: default;
 }
 
-.email-icon {
+/* .email-icon {
   height: 2.5rem;
-}
+} */
 
 /* FOOTER SECTION */
 
@@ -473,3 +534,54 @@ footer {
 footer p {
   text-align: center;
 }
+
+/* DARKMODE SECTION */
+
+body.darkmode {
+  background-color: #212121;
+  color: #ffffff;
+}
+
+.details-container.darkmode {
+  background-color: #212121;
+  color: #ffffff;
+  box-shadow: 0 0 20px 5px rgb(250, 250, 250); 
+}
+
+
+p.darkmode {
+  color: #ffffff;
+}
+
+a.darkmode {
+  background-color: #212121;
+  color: #ffffff;
+}
+
+h2.darkmode{
+  color: #ffffff;
+}
+
+button.darkmode {
+  background-color: #212121;
+  color: #ffffff;
+}
+
+span.darkmode {
+  background-color: #ffffff;
+}
+
+#profile_pic.dark-mode-shadow {
+  box-shadow: 0 0 20px 5px rgb(250, 250, 250); 
+}
+
+.about-pic.dark-mode-shadow {
+  box-shadow: 0 0 20px 5px rgb(250, 250, 250); 
+}
+
+ 
+
+
+
+
+
