@@ -20,7 +20,7 @@ function darkmode() {
   const dark_a = document.querySelectorAll('a');
   const dark_h2 = document.querySelectorAll('h2');
   const dark_btn = document.querySelectorAll('button');
-  const dark_span = document.querySelectorAll('span');
+  const dark_span = document.querySelectorAll('.span2');
   const dark_about_pic = document.querySelector('.about-pic');
   // const details_container = document.querySelector('.details-container');
   const profilePic = document.getElementById('profile_pic');
