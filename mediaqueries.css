@@ -52,9 +52,13 @@
   footer {
     height: 40vh;
   }
+  #contact{
+    margin-top: 1.5rem;
+  }
   #profile {
     height: 83vh;
     margin-bottom: 0;
+    margin-top: 1rem;
   }
   article {
     font-size: 1rem;
@@ -91,8 +95,11 @@
   }
   .section__pic-container {
     width: auto;
-    height: 46vw;
+    height: 70vw;
     justify-content: center;
+  }
+  .section__text{
+    margin-top: 3rem;
   }
   .section__text__p2 {
     font-size: 1.25rem;
@@ -102,6 +109,12 @@
   }
   .text-container {
     text-align: justify;
+  }
+  #message-me textarea{
+    width: 15rem;
+  }
+  .mess-me{
+    margin-bottom: 3rem;
   }
 }
 

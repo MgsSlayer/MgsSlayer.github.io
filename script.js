@@ -24,7 +24,11 @@ function darkmode() {
   const dark_about_pic = document.querySelector('.about-pic');
   // const details_container = document.querySelector('.details-container');
   const profilePic = document.getElementById('profile_pic');
-  
+  const message_me = document.getElementById('txt-area');
+  const mess_me = document.querySelector('.mess-me');
+
+  message_me.classList.toggle('dark-mode');
+  mess_me.classList.toggle('dark-mode');
   
   dark_about_pic.classList.toggle('dark-mode-shadow');
   // details_container.classList.toggle('dark-mode-shadow');
