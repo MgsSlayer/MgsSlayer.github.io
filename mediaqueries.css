@@ -10,6 +10,9 @@
   #projects {
     height: fit-content;
   }
+  #contact, #experience {
+  margin-top: 6rem;
+  }
 }
 
 @media screen and (max-width: 1200px) {
