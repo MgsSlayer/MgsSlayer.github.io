@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
         alertBox.style.color = "green";
       } else {
         // Show error alert
-        alertBox.innerHTML = "Failed to send the message.";
+        alertBox.innerHTML = "Failed to send message.";
         alertBox.style.color = "red";
       }
     } catch (error) {
