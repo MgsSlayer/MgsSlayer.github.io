@@ -288,6 +288,26 @@ document.write('<script src="assets/anime-master/lib/anime.min.js"><\/script>');
       }
     </script>
     <script src="script.js"></script>
+
+    <script>
+      document.getElementById("emailForm").addEventListener("submit", async function(event) {
+          event.preventDefault();
+      
+          const formData = {
+              subject: document.getElementById("subject").value,
+              message: document.getElementById("message").value
+          };
+      
+          const response = await fetch("/.netlify/functions/send_email", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(formData)
+          });
+      
+          const result = await response.json();
+          document.getElementById("responseMessage").innerText = result.message;
+      });
+      </script>
     
     
   </body>
