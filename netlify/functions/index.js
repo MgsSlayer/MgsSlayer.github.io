@@ -11,7 +11,7 @@ exports.handler = async function (event) {
         service: "gmail",
         auth: {
             user: process.env.GOOGLE_MAIL_SENDER,
-            pass: process.env.NODE_MAILER_GOOGLE_PASS, // Ensure this is set in Netlify
+            pass: process.env.NODE_MAILER_GOOGLE_PASS, 
         }
     });
 
@@ -35,3 +35,9 @@ exports.handler = async function (event) {
         };
     }
 };
+
+
+document.getElementById("emailForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+    });
+  
