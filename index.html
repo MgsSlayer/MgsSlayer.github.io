@@ -298,7 +298,7 @@ document.write('<script src="assets/anime-master/lib/anime.min.js"><\/script>');
               message: document.getElementById("message").value
           };
       
-          const response = await fetch("http://localhost:8888/.netlify/functions/index", {
+          const response = await fetch("/.netlify/functions/index", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(formData)
