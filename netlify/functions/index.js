@@ -10,14 +10,14 @@ exports.handler = async function (event) {
     let transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-            user: "michael.oboho@gmail.com",
+            user: process.env.GOOGLE_MAIL_SENDER,
             pass: process.env.NODE_MAILER_GOOGLE_PASS, // Ensure this is set in Netlify
         }
     });
 
     let mailOptions = {
-        from: "michael.oboho@gmail.com",
-        to: "esio.oboho@gmail.com",
+        from: process.env.GOOGLE_MAIL_SENDER,
+        to: process.env.GOOGLE_MAIL_RECIEVER,
         subject: data.subject,
         text: data.message
     };
