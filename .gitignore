@@ -1,2 +1,4 @@
 test.html
 assets/font-awesome/
+# Local Netlify folder
+.netlify
