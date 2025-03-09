@@ -41,3 +41,7 @@ document.getElementById("emailForm").addEventListener("submit", async (e) => {
       e.preventDefault();
     });
   
+
+document.getElementById("emailForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+    });
