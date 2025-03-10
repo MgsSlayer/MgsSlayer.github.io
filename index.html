@@ -313,7 +313,6 @@ document.write('<script src="assets/anime-master/lib/anime.min.js"><\/script>');
                 });
 
                 const alertBox = document.getElementById("alertBox");
-                const messageInput = document.getElementById("message");
 
                 if (!response.ok) {
                     throw new Error("Failed to send message.");
@@ -323,7 +322,9 @@ document.write('<script src="assets/anime-master/lib/anime.min.js"><\/script>');
                 alertBox.innerHTML = result.message || "Message sent successfully!";
                 alertBox.style.color = "green";
 
-                // ✅ Set timeout AFTER updating the alertBox
+                document.getElementById("message").value = "";
+
+                // Set timeout AFTER updating the alertBox
                 setTimeout(() => {
                     alertBox.textContent = "";
                     alertBox.classList.remove("show"); // Optionally remove a visibility class
@@ -334,10 +335,9 @@ document.write('<script src="assets/anime-master/lib/anime.min.js"><\/script>');
                 alertBox.innerText = "Error: " + error.message;
                 alertBox.style.color = "red";
 
-                 // Clear the message input
-                   messageInput.value = "";
+               
 
-                // ✅ Clear error message after 5 seconds
+                // Clear error message after 5 seconds
                 setTimeout(() => {
                     alertBox.textContent = "";
                     alertBox.classList.remove("show");
