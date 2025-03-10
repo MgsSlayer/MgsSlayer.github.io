@@ -252,7 +252,7 @@
       </div>
         <p id="or">Or</p>
       <div id="message-me">
-        <form id="emailForm" onclick="email()">
+        <form id="emailForm" action="/send_email" method="post" onclick="email()">
           <label for="subject"></label>
           <input id="subject" name="subject" placeholder="subject" type="text"></input>
           <label for="message"></label>
@@ -292,50 +292,21 @@ document.write('<script src="assets/anime-master/lib/anime.min.js"><\/script>');
     <script>
       
 
-//       async function email(){
-//         let email_form = document.getElementById("emailForm");
+      async function email(){
+        let email_form = document.getElementById("emailForm");
 
-//         email_form.addEventListener("submit", async function(event) {
-//           event.preventDefault();
+        email_form.addEventListener("submit", async function(event) {
+          event.preventDefault();
       
-//       // email_form.addEventListener("submit", async function email2(event) {
-//       //     event.preventDefault();
+      // email_form.addEventListener("submit", async function email2(event) {
+      //     event.preventDefault();
       
-//           const formData = {
-//               subject: document.getElementById("subject").value,
-//               message: document.getElementById("message").value
-//           };
+          const formData = {
+              subject: document.getElementById("subject").value,
+              message: document.getElementById("message").value
+          };
       
-//           try {
-//             const response = await fetch("/.netlify/functions/index", {
-//                 method: "POST",
-//                 headers: { "Content-Type": "application/json" },
-//                 body: JSON.stringify(formData)
-//             });
-
-//             let alertBox = document.getElementById("alertBox");
-
-//             if (!response.ok) {
-//                 throw new Error("Failed to send message.");
-//             }
-
-//             const result = await response.json();
-//             alertBox.innerHTML = result.message || "Message sent successfully!";
-//             alertBox.style.color = "green";
-//     } catch (error) {
-//         document.getElementById("alertBox").innerText = "Error: " + error.message;
-//         document.getElementById("alertBox").style.color = "red";
-//     }
-// })};
-document.getElementById("emailForm").addEventListener("submit", async function(event) {
-    event.preventDefault();
-
-    const formData = {
-        subject: document.getElementById("subject").value,
-        message: document.getElementById("message").value
-    };
-
-    try {
+          try {
         const response = await fetch("/.netlify/functions/index", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -355,8 +326,7 @@ document.getElementById("emailForm").addEventListener("submit", async function(e
         document.getElementById("alertBox").innerText = "Error: " + error.message;
         document.getElementById("alertBox").style.color = "red";
     }
-});
-
+})};
       </script>
     
     
