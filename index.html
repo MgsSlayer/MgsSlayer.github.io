@@ -292,41 +292,71 @@ document.write('<script src="assets/anime-master/lib/anime.min.js"><\/script>');
     <script>
       
 
-      async function email(){
-        let email_form = document.getElementById("emailForm");
+//       async function email(){
+//         let email_form = document.getElementById("emailForm");
 
-        email_form.addEventListener("submit", async function(event) {
-          event.preventDefault();
+//         email_form.addEventListener("submit", async function(event) {
+//           event.preventDefault();
       
-      // email_form.addEventListener("submit", async function email2(event) {
-      //     event.preventDefault();
+//       // email_form.addEventListener("submit", async function email2(event) {
+//       //     event.preventDefault();
       
-          const formData = {
-              subject: document.getElementById("subject").value,
-              message: document.getElementById("message").value
-          };
+//           const formData = {
+//               subject: document.getElementById("subject").value,
+//               message: document.getElementById("message").value
+//           };
       
-          try {
-            const response = await fetch("/.netlify/functions/index", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(formData)
-            });
+//           try {
+//             const response = await fetch("/.netlify/functions/index", {
+//                 method: "POST",
+//                 headers: { "Content-Type": "application/json" },
+//                 body: JSON.stringify(formData)
+//             });
 
-            let alertBox = document.getElementById("alertBox");
+//             let alertBox = document.getElementById("alertBox");
 
-            if (!response.ok) {
-                throw new Error("Failed to send message.");
-            }
+//             if (!response.ok) {
+//                 throw new Error("Failed to send message.");
+//             }
 
-            const result = await response.json();
-            alertBox.innerHTML = result.message || "Message sent successfully!";
-            alertBox.style.color = "green";
+//             const result = await response.json();
+//             alertBox.innerHTML = result.message || "Message sent successfully!";
+//             alertBox.style.color = "green";
+//     } catch (error) {
+//         document.getElementById("alertBox").innerText = "Error: " + error.message;
+//         document.getElementById("alertBox").style.color = "red";
+//     }
+// })};
+document.getElementById("emailForm").addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    const formData = {
+        subject: document.getElementById("subject").value,
+        message: document.getElementById("message").value
+    };
+
+    try {
+        const response = await fetch("/.netlify/functions/index", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData)
+        });
+
+        let alertBox = document.getElementById("alertBox");
+
+        if (!response.ok) {
+            throw new Error("Failed to send message.");
+        }
+
+        const result = await response.json();
+        alertBox.innerHTML = result.message || "Message sent successfully!";
+        alertBox.style.color = "green";
     } catch (error) {
         document.getElementById("alertBox").innerText = "Error: " + error.message;
         document.getElementById("alertBox").style.color = "red";
     }
-})};
+});
+
       </script>
     
     
