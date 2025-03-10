@@ -290,63 +290,63 @@ document.write('<script src="assets/anime-master/lib/anime.min.js"><\/script>');
     <script src="script.js"></script>
 
     <script>
-    document.addEventListener("DOMContentLoaded", function() {
-    let emailForm = document.getElementById("emailForm");
+//     document.addEventListener("DOMContentLoaded", function() {
+//     let emailForm = document.getElementById("emailForm");
 
-    // Prevent multiple event listeners from being added
-    if (!emailForm.dataset.listener) {
-        emailForm.dataset.listener = "true"; // Mark the form to prevent duplicate listeners
+//     // Prevent multiple event listeners from being added
+//     if (!emailForm.dataset.listener) {
+//         emailForm.dataset.listener = "true"; // Mark the form to prevent duplicate listeners
 
-        emailForm.addEventListener("submit", async function(event) {
-            event.preventDefault();
+//         emailForm.addEventListener("submit", async function(event) {
+//             event.preventDefault();
 
-            const formData = {
-                subject: document.getElementById("subject").value,
-                message: document.getElementById("message").value
-            };
+//             const formData = {
+//                 subject: document.getElementById("subject").value,
+//                 message: document.getElementById("message").value
+//             };
 
-            try {
-                const response = await fetch("/.netlify/functions/index", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(formData)
-                });
+//             try {
+//                 const response = await fetch("/.netlify/functions/index", {
+//                     method: "POST",
+//                     headers: { "Content-Type": "application/json" },
+//                     body: JSON.stringify(formData)
+//                 });
 
-                const alertBox = document.getElementById("alertBox");
+//                 const alertBox = document.getElementById("alertBox");
 
-                if (!response.ok) {
-                    throw new Error("Failed to send message.");
-                }
+//                 if (!response.ok) {
+//                     throw new Error("Failed to send message.");
+//                 }
 
-                const result = await response.json();
-                alertBox.innerHTML = result.message || "Message sent successfully!";
-                alertBox.style.color = "green";
+//                 const result = await response.json();
+//                 alertBox.innerHTML = result.message || "Message sent successfully!";
+//                 alertBox.style.color = "green";
                 
-                document.getElementById("subject").value = "";
-                document.getElementById("message").value = "";
+//                 document.getElementById("subject").value = "";
+//                 document.getElementById("message").value = "";
 
-                // Set timeout AFTER updating the alertBox
-                setTimeout(() => {
-                    alertBox.textContent = "";
-                    alertBox.classList.remove("show"); // Optionally remove a visibility class
-                }, 5000);
+//                 // Set timeout AFTER updating the alertBox
+//                 setTimeout(() => {
+//                     alertBox.textContent = "";
+//                     alertBox.classList.remove("show"); // Optionally remove a visibility class
+//                 }, 5000);
 
-            } catch (error) {
-                let alertBox = document.getElementById("alertBox");
-                alertBox.innerText = "Error: " + error.message;
-                alertBox.style.color = "red";
+//             } catch (error) {
+//                 let alertBox = document.getElementById("alertBox");
+//                 alertBox.innerText = "Error: " + error.message;
+//                 alertBox.style.color = "red";
 
                
 
-                // Clear error message after 5 seconds
-                setTimeout(() => {
-                    alertBox.textContent = "";
-                    alertBox.classList.remove("show");
-                }, 5000);
-            }
-        });
-    }
-});
+//                 // Clear error message after 5 seconds
+//                 setTimeout(() => {
+//                     alertBox.textContent = "";
+//                     alertBox.classList.remove("show");
+//                 }, 5000);
+//             }
+//         });
+//     }
+// });
 
 
       </script>
@@ -354,6 +354,3 @@ document.write('<script src="assets/anime-master/lib/anime.min.js"><\/script>');
     
   </body>
 </html>
-
-
-<!-- const response = await fetch("/.netlify/functions/index", { -->
