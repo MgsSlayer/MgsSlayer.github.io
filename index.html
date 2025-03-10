@@ -280,77 +280,15 @@
   </div> 
 </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js" integrity="sha512-+2pW8xXU/rNr7VS+H62aqapfRpqFwnSQh9ap6THjsm41AxgA0MhFRtfrABS+Lx2KHJn82UOrnBKhjZOXpom2LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js" integrity="sha512-+2pW8xXU/rNr7VS+H62aqapfRpqFwnSQh9ap6THjsm41AxgA0MhFRtfrABS+Lx2KHJn82UOrnBKhjZOXpom2LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     
     <script>
       if (typeof anime === 'undefined') {
-document.write('<script src="assets/anime-master/lib/anime.min.js"><\/script>');
+        document.write('<script src="assets/anime-master/lib/anime.min.js"><\/script>');
       }
     </script>
+
     <script src="script.js"></script>
-
-    <script>
-//     document.addEventListener("DOMContentLoaded", function() {
-//     let emailForm = document.getElementById("emailForm");
-
-//     // Prevent multiple event listeners from being added
-//     if (!emailForm.dataset.listener) {
-//         emailForm.dataset.listener = "true"; // Mark the form to prevent duplicate listeners
-
-//         emailForm.addEventListener("submit", async function(event) {
-//             event.preventDefault();
-
-//             const formData = {
-//                 subject: document.getElementById("subject").value,
-//                 message: document.getElementById("message").value
-//             };
-
-//             try {
-//                 const response = await fetch("/.netlify/functions/index", {
-//                     method: "POST",
-//                     headers: { "Content-Type": "application/json" },
-//                     body: JSON.stringify(formData)
-//                 });
-
-//                 const alertBox = document.getElementById("alertBox");
-
-//                 if (!response.ok) {
-//                     throw new Error("Failed to send message.");
-//                 }
-
-//                 const result = await response.json();
-//                 alertBox.innerHTML = result.message || "Message sent successfully!";
-//                 alertBox.style.color = "green";
-                
-//                 document.getElementById("subject").value = "";
-//                 document.getElementById("message").value = "";
-
-//                 // Set timeout AFTER updating the alertBox
-//                 setTimeout(() => {
-//                     alertBox.textContent = "";
-//                     alertBox.classList.remove("show"); // Optionally remove a visibility class
-//                 }, 5000);
-
-//             } catch (error) {
-//                 let alertBox = document.getElementById("alertBox");
-//                 alertBox.innerText = "Error: " + error.message;
-//                 alertBox.style.color = "red";
-
-               
-
-//                 // Clear error message after 5 seconds
-//                 setTimeout(() => {
-//                     alertBox.textContent = "";
-//                     alertBox.classList.remove("show");
-//                 }, 5000);
-//             }
-//         });
-//     }
-// });
-
-
-      </script>
-    
-    
+        
   </body>
 </html>
