@@ -321,7 +321,8 @@ document.write('<script src="assets/anime-master/lib/anime.min.js"><\/script>');
                 const result = await response.json();
                 alertBox.innerHTML = result.message || "Message sent successfully!";
                 alertBox.style.color = "green";
-
+                
+                document.getElementById("subject").value = "";
                 document.getElementById("message").value = "";
 
                 // Set timeout AFTER updating the alertBox
