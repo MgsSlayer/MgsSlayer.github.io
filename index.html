@@ -312,7 +312,8 @@ document.write('<script src="assets/anime-master/lib/anime.min.js"><\/script>');
                     body: JSON.stringify(formData)
                 });
 
-                let alertBox = document.getElementById("alertBox");
+                const alertBox = document.getElementById("alertBox");
+                const messageInput = document.getElementById("message");
 
                 if (!response.ok) {
                     throw new Error("Failed to send message.");
@@ -332,6 +333,9 @@ document.write('<script src="assets/anime-master/lib/anime.min.js"><\/script>');
                 let alertBox = document.getElementById("alertBox");
                 alertBox.innerText = "Error: " + error.message;
                 alertBox.style.color = "red";
+
+                 // Clear the message input
+                   messageInput.value = "";
 
                 // ✅ Clear error message after 5 seconds
                 setTimeout(() => {
