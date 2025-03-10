@@ -252,7 +252,7 @@
       </div>
         <p id="or">Or</p>
       <div id="message-me">
-        <form id="emailForm" action="/send_email" method="post">
+        <form id="emailForm" action="/send_email" method="post" onclick="email()">
           <label for="subject"></label>
           <input id="subject" name="subject" placeholder="subject" type="text"></input>
           <label for="message"></label>
@@ -290,8 +290,16 @@ document.write('<script src="assets/anime-master/lib/anime.min.js"><\/script>');
     <script src="script.js"></script>
 
     <script>
-      document.getElementById("emailForm").addEventListener("submit", async function(event) {
+      
+
+      async function email(){
+        let email_form = document.getElementById("emailForm");
+
+        email_form.addEventListener("submit", async function(event) {
           event.preventDefault();
+      
+      // email_form.addEventListener("submit", async function email2(event) {
+      //     event.preventDefault();
       
           const formData = {
               subject: document.getElementById("subject").value,
@@ -305,8 +313,8 @@ document.write('<script src="assets/anime-master/lib/anime.min.js"><\/script>');
           });
       
           const result = await response.json();
-          document.getElementById("responseMessage").innerText = result.message;
-      });
+          document.getElementById("alertBox").innerText = result.message;
+      });}
       </script>
     
     

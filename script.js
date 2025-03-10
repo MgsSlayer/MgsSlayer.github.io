@@ -42,49 +42,49 @@ function darkmode() {
 
 
 // ALERT AND STYLING FOR EMAIL
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("emailForm");
-  const messageInput = document.getElementById("message");
-  const alertBox = document.getElementById("alertBox");
+// document.addEventListener("DOMContentLoaded", () => {
+//   const form = document.getElementById("emailForm");
+//   const messageInput = document.getElementById("message");
+//   const alertBox = document.getElementById("alertBox");
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault(); // Prevent default form submission
+//   form.addEventListener("submit", async (e) => {
+//     e.preventDefault(); // Prevent default form submission
 
-    const message = messageInput.value;
+//     const message = messageInput.value;
 
-    try {
-      const response = await fetch("/send_email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ message }),
-      });
+//     try {
+//       const response = await fetch("/send_email", {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify({ message }),
+//       });
 
-      if (response.ok) {
-        // Show success alert
-        alertBox.innerHTML = "Message sent successfully!";
-        alertBox.style.color = "green";
-      } else {
-        // Show error alert
-        alertBox.innerHTML = "Failed to send message.";
-        alertBox.style.color = "red";
-      }
-    } catch (error) {
-      alertBox.innerHTML = "An error occurred. Please try again.";
-      alertBox.style.color = "red";
-      console.error("Error:", error);
-    }
+//       if (response.ok) {
+//         // Show success alert
+//         alertBox.innerHTML = "Message sent successfully!";
+//         alertBox.style.color = "green";
+//       } else {
+//         // Show error alert
+//         alertBox.innerHTML = "Failed to send message.";
+//         alertBox.style.color = "red";
+//       }
+//     } catch (error) {
+//       alertBox.innerHTML = "An error occurred. Please try again.";
+//       alertBox.style.color = "red";
+//       console.error("Error:", error);
+//     }
 
-    // Clear the message input
-    messageInput.value = "";
+//     // Clear the message input
+//     messageInput.value = "";
 
-    setTimeout(() => {
-      alertBox.textContent = "";
-      alertBox.classList.remove("show"); // Optionally remove a visibility class
-    }, 5000);
-  });
-});
+//     setTimeout(() => {
+//       alertBox.textContent = "";
+//       alertBox.classList.remove("show"); // Optionally remove a visibility class
+//     }, 5000);
+//   });
+// });
 
 // ANIMATIONS
 let isMobile = window.innerWidth <= 1023;
