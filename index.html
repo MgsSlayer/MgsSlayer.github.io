@@ -290,14 +290,14 @@ document.write('<script src="assets/anime-master/lib/anime.min.js"><\/script>');
     <script src="script.js"></script>
 
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        let emailForm = document.getElementById("emailForm");
+    document.addEventListener("DOMContentLoaded", function() {
+    let emailForm = document.getElementById("emailForm");
 
-       // Prevent multiple event listeners from being added
-        if (!emailForm.dataset.listener) {
-          emailForm.dataset.listener = "true"; // Mark the form to prevent duplicate listeners
+    // Prevent multiple event listeners from being added
+    if (!emailForm.dataset.listener) {
+        emailForm.dataset.listener = "true"; // Mark the form to prevent duplicate listeners
 
-          emailForm.addEventListener("submit", async function(event) {
+        emailForm.addEventListener("submit", async function(event) {
             event.preventDefault();
 
             const formData = {
@@ -321,19 +321,28 @@ document.write('<script src="assets/anime-master/lib/anime.min.js"><\/script>');
                 const result = await response.json();
                 alertBox.innerHTML = result.message || "Message sent successfully!";
                 alertBox.style.color = "green";
-            } catch (error) {
-                document.getElementById("alertBox").innerText = "Error: " + error.message;
-                document.getElementById("alertBox").style.color = "red";
 
+                // ✅ Set timeout AFTER updating the alertBox
                 setTimeout(() => {
-              alertBox.textContent = "";
-              alertBox.classList.remove("show"); // Optionally remove a visibility class
-              }, 5000);
+                    alertBox.textContent = "";
+                    alertBox.classList.remove("show"); // Optionally remove a visibility class
+                }, 5000);
+
+            } catch (error) {
+                let alertBox = document.getElementById("alertBox");
+                alertBox.innerText = "Error: " + error.message;
+                alertBox.style.color = "red";
+
+                // ✅ Clear error message after 5 seconds
+                setTimeout(() => {
+                    alertBox.textContent = "";
+                    alertBox.classList.remove("show");
+                }, 5000);
             }
         });
     }
-    
-  });
+});
+
 
       </script>
     
