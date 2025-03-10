@@ -292,40 +292,69 @@ document.write('<script src="assets/anime-master/lib/anime.min.js"><\/script>');
     <script>
       
 
-      async function email(){
-        let email_form = document.getElementById("emailForm");
+      // async function email(){
+      //   let email_form = document.getElementById("emailForm");
 
-        email_form.addEventListener("submit", async function(event) {
-          event.preventDefault();
-      
-      // email_form.addEventListener("submit", async function email2(event) {
+      //   email_form.addEventListener("submit", async function(event) {
       //     event.preventDefault();
       
-          const formData = {
-              subject: document.getElementById("subject").value,
-              message: document.getElementById("message").value
-          };
+      // // email_form.addEventListener("submit", async function email2(event) {
+      // //     event.preventDefault();
       
-          const response = await fetch("/.netlify/functions/index", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(formData)
-          });
-          let alertBox =  document.getElementById("alertBox");
-          const result = await response.json();
-          
+      //     const formData = {
+      //         subject: document.getElementById("subject").value,
+      //         message: document.getElementById("message").value
+      //     };
+      
+      //     const response = await fetch("/.netlify/functions/index", {
+      //         method: "POST",
+      //         headers: { "Content-Type": "application/json" },
+      //         body: JSON.stringify(formData)
+      //     });
+      
+      //     const result = await response.json();
+      //     document.getElementById("alertBox").innerText = result.message;
+      // });}
 
-          if (response.ok) {
-        // Show success alert
-        alertBox.innerHTML = "Message sent successfully!";
-        alertBox.style.color = "green";
-      } else {
-        // Show error alert
-        alertBox.innerHTML = "Failed to send message.";
-        alertBox.style.color = "red";
+      document.addEventListener("DOMContentLoaded", function() {
+    let emailForm = document.getElementById("emailForm");
 
-          // document.getElementById("alertBox").innerText = result.message;
-      }})};
+    // Prevent multiple event listeners from being added
+    if (!emailForm.dataset.listener) {
+        emailForm.dataset.listener = "true"; // Mark the form to prevent duplicate listeners
+
+        emailForm.addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            const formData = {
+                subject: document.getElementById("subject").value,
+                message: document.getElementById("message").value
+            };
+
+            try {
+                const response = await fetch("/.netlify/functions/index", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(formData)
+                });
+
+                let alertBox = document.getElementById("alertBox");
+
+                if (!response.ok) {
+                    throw new Error("Failed to send message.");
+                }
+
+                const result = await response.json();
+                alertBox.innerHTML = result.message || "Message sent successfully!";
+                alertBox.style.color = "green";
+            } catch (error) {
+                document.getElementById("alertBox").innerText = "Error: " + error.message;
+                document.getElementById("alertBox").style.color = "red";
+            }
+        });
+    }
+});
+
       </script>
     
     
