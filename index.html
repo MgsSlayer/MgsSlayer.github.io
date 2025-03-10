@@ -306,15 +306,27 @@ document.write('<script src="assets/anime-master/lib/anime.min.js"><\/script>');
               message: document.getElementById("message").value
           };
       
-          const response = await fetch("/.netlify/functions/index", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(formData)
-          });
-      
-          const result = await response.json();
-          document.getElementById("alertBox").innerText = result.message;
-      });}
+          try {
+            const response = await fetch("/.netlify/functions/index", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData)
+            });
+
+            let alertBox = document.getElementById("alertBox");
+
+            if (!response.ok) {
+                throw new Error("Failed to send message.");
+            }
+
+            const result = await response.json();
+            alertBox.innerHTML = result.message || "Message sent successfully!";
+            alertBox.style.color = "green";
+    } catch (error) {
+        document.getElementById("alertBox").innerText = "Error: " + error.message;
+        document.getElementById("alertBox").style.color = "red";
+    }
+})};
       </script>
     
     
