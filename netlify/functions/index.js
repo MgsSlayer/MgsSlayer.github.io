@@ -16,7 +16,7 @@ exports.handler = async function (event) {
     });
 
     let mailOptions = {
-        from: process.env.GOOGLE_MAIL_SENDER,
+        from: data.contact,
         to: process.env.GOOGLE_MAIL_RECIEVER,
         subject: data.subject,
         text: data.message
