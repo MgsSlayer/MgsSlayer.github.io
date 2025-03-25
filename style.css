@@ -181,7 +181,7 @@ a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: hsla(0, 0%, 100%, 0.945);
   overflow: hidden;
   z-index: 0;
   transition: left 0.3s ease-in-out;
