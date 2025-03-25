@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function() {
           event.preventDefault();
 
           const formData = {
-              contact: document.getElementById("client-contact").value,
+              // contact: document.getElementById("client-contact").value,
               subject: document.getElementById("subject").value,
               message: document.getElementById("message").value
           };

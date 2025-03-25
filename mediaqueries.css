@@ -51,7 +51,8 @@
   .about-containers {
     margin-top: 0;
   }
-  #subject{
+  #subject,
+  #client-contact{
     width: auto;
   }
 }
@@ -128,7 +129,8 @@
   #mess-me{
     margin-bottom: 3rem;
   }
-  #subject{
+  #subject,
+  #client-contact{
     width: auto;
   }
   .img-box{
