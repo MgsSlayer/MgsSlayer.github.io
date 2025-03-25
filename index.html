@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
 
@@ -16,12 +17,11 @@
   <body>
   <div class="container">
     <div class="main_body"> 
-
+<!-- 
     <div class="btn-ctn">
-        <!-- <button class="mode-btn" onclick="darkmode()">Dark Mode</button> -->
         <i class="fas fa-moon dark-mode-icon" onclick="darkmode()"></i>
     </div> 
-    
+     -->
     <!----- DESKTOP NAVIGATION ----->
     <nav id="desktop-nav">
       <div class="logo">Esio Oboho</div>
@@ -32,25 +32,37 @@
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
+        <div class="btn-ctn">
+          <i class="fas fa-moon dark-light-icon" onclick="darkmode()"></i>
+          <i class="fas fa-sun dark-light-icon" onclick="darkmode()"></i>
+        </div> 
       </div>
+      
     </nav>
  
     <!----- MOBILE/HAMBURGER NAV ----->
     <nav id="hamburger-nav">
       <div class="logo">Esio Oboho</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span class="span2"></span>
-          <span class="span2"></span>
-          <span class="span2"></span>
+      <div class="top-buttons">
+        <div class="btn-ctn">
+          <i class="fas fa-moon dark-light-icon" onclick="darkmode()"></i>
+          <i class="fas fa-sun dark-light-icon" onclick="darkmode()"></i>
         </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        <div class="hamburger-menu">
+          
+          <div class="hamburger-icon" onclick="toggleMenu()">
+            <span class="span2"></span>
+            <span class="span2"></span>
+            <span class="span2"></span>
+          </div>
+          <div class="menu-links">
+            <li><a href="#about" onclick="toggleMenu()">About</a></li>
+            <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+            <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+          </div>
         </div>
-      </div>
+      </div>  
     </nav>
 
     <!----- PROFILE SECTION ----->
@@ -117,8 +129,8 @@
           <div class="details-container">
             <h2 class="experience-sub-title">Frontend Development</h2>
             <div class="article-container">
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+              <article>                
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain.svg" alt="Experience icon" class="icon"/>
                 <div>
                   <h3>HTML</h3>
                   <p>Experienced</p>
@@ -128,7 +140,7 @@
                 </div>
               </article>
               <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-plain.svg" alt="Experience icon" class="icon"/>
                 <div>
                   <h3>CSS</h3>
                   <p>Experienced</p>
@@ -145,7 +157,7 @@
                 </div>
               </article> -->
               <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg" alt="Experience icon" class="icon"/>
                 <div>
                   <h3>JavaScript</h3>
                   <p>Intermediate</p>
@@ -155,9 +167,9 @@
                 </div>
               </article>
               <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="Experience icon" class="icon"/>
                 <div>
-                  <h3>TypeScript</h3>
+                  <h3>React</h3>
                   <p>Basic</p>
                   <div class="bar">
                     <div class="per-basic"></div>
@@ -177,9 +189,9 @@
             <h2 class="experience-sub-title">Backend Development</h2>
             <div class="article-container">
               <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="Experience icon" class="icon"/>
                 <div>
-                  <h3>PostgreSQL</h3>
+                  <h3>MongoDB</h3>
                   <p>Basic</p>
                   <div class="bar">
                     <div class="per-basic"></div>
@@ -187,7 +199,7 @@
                 </div>
               </article>
               <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-plain.svg" alt="Experience icon" class="icon"/>
                 <div>
                   <h3>Node JS</h3>
                   <p>Intermediate</p>
@@ -197,7 +209,7 @@
                 </div>
               </article>
               <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" alt="Experience icon" class="icon"/>
                 <div>
                   <h3>Express JS</h3>
                   <p>Intermediate</p>
@@ -207,7 +219,7 @@
                 </div>
               </article>
               <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-plain.svg" alt="Experience icon" class="icon"/>
                 <div>
                   <h3>Git</h3>
                   <p>Intermediate</p>
@@ -265,7 +277,7 @@
 
     <!----- FOOTER ----->
     <footer>
-      <nav>
+      <div style="display: flex; justify-content: center; margin: 2.5rem 0;">
         <div class="nav-links-container">
           <ul class="nav-links">
             <li><a href="#about">About</a></li>
@@ -274,7 +286,7 @@
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
-      </nav>
+      </div>
       <p>Copyright &#169; 2023 Esio Oboho. All Rights Reserved.</p>
     </footer>
   </div> 

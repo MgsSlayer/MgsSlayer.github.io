@@ -1,6 +1,6 @@
 // HAMBURGER MENU FOR MOBILE
 function toggleMenu() {
-  const menu = document.querySelectorAll('.menu-links, .harmburger-icon');
+  const menu = document.querySelectorAll('.menu-links, .hamburger-icon');
   
   menu.forEach(element =>{
     element.classList.toggle("open");
@@ -34,11 +34,16 @@ createDivs();
 // DARK MODE
 function darkmode() {
   const darkdiv = document.querySelectorAll('body, p, a, h2, button, .menu-links, .span2, .title, .section__text__p1, .details-container, #profile_pic, #message, #subject, #mess-me, #about-pic'); 
-
+  const icon = document.querySelector(".dark-mode-icon");
+  
   darkdiv.forEach(element => {
                 element.classList.toggle('darkmode');
-            });          
+            });  
+            
+  
 }
+
+
 
 
 // ALERT AND STYLING FOR EMAIL
@@ -131,8 +136,6 @@ document.addEventListener("DOMContentLoaded", function() {
               let alertBox = document.getElementById("alertBox");
               alertBox.innerText = "Error: " + error.message;
               alertBox.style.color = "red";
-
-             
 
               // Clear error message after 5 seconds
               setTimeout(() => {
