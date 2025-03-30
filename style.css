@@ -698,7 +698,7 @@ span.darkmode {
 }
 
 .menu-links.darkmode{
-  background-color: #212121;
+  background-color: hsla(0, 0%, 13%, 0.970);
   color: #ffffff;
 }
 
@@ -720,12 +720,4 @@ span.darkmode {
 #emailForm button.darkmode{
   border: 1px solid #ffffff;
   color: #ffffff;
-}
-
-#profile_pic.darkmode{
-  /* box-shadow: 0 0 20px 5px rgb(250, 250, 250);  */
-}
-
-#about-pic.darkmode{
-  /* box-shadow: 0 0 20px 5px rgb(250, 250, 250);  */
 }
