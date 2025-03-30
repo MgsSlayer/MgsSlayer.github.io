@@ -7,13 +7,6 @@ function toggleMenu() {
   })
 }
 
-// var typed = new Typed(".typing",{
-//   strings:["","Web Developer","Network Admin","Web Designer"],
-//   typeSpeed:100,
-//   BackSpeed:60,
-//   loop:true
-// })
-
 // CREATE DIVS FOR ANIMATION
 function createDivs() {
   let container = document.querySelector(".container");
@@ -39,58 +32,10 @@ function darkmode() {
   darkdiv.forEach(element => {
                 element.classList.toggle('darkmode');
             });  
-            
-  
+             
 }
 
-
-
-
-// ALERT AND STYLING FOR EMAIL
-// document.addEventListener("DOMContentLoaded", () => {
-//   const form = document.getElementById("emailForm");
-//   const messageInput = document.getElementById("message");
-//   const alertBox = document.getElementById("alertBox");
-
-//   form.addEventListener("submit", async (e) => {
-//     e.preventDefault(); // Prevent default form submission
-
-//     const message = messageInput.value;
-
-//     try {
-//       const response = await fetch("/send_email", {
-//         method: "POST",
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify({ message }),
-//       });
-
-//       if (response.ok) {
-//         // Show success alert
-//         alertBox.innerHTML = "Message sent successfully!";
-//         alertBox.style.color = "green";
-//       } else {
-//         // Show error alert
-//         alertBox.innerHTML = "Failed to send message.";
-//         alertBox.style.color = "red";
-//       }
-//     } catch (error) {
-//       alertBox.innerHTML = "An error occurred. Please try again.";
-//       alertBox.style.color = "red";
-//       console.error("Error:", error);
-//     }
-
-//     // Clear the message input
-//     messageInput.value = "";
-
-//     setTimeout(() => {
-//       alertBox.textContent = "";
-//       alertBox.classList.remove("show"); // Optionally remove a visibility class
-//     }, 5000);
-//   });
-// });
-
+// MAILER STYLING AND ALERT
 document.addEventListener("DOMContentLoaded", function() {
   let emailForm = document.getElementById("emailForm");
 
@@ -188,6 +133,3 @@ let rotate = anime({
 });
 
 console.log(window.anime);
-// translateX: isMobile ? '350px' : '40.7%', 
-//   translateY: isMobile ? '-280px' : '0', 
-
