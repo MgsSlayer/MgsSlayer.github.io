@@ -519,7 +519,7 @@ article .icon {
 }
 
 .img-box:nth-child(2){
-    background: url(assets/project-2.png);
+    background: url(assets/project-2.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -605,16 +605,22 @@ article .icon {
   align-items: center;
 }
 
-#subject{
+.dets{
+  display: flex;
+  gap: 0.5rem;
+
+}
+
+#subject, #ccontact{
   margin: 0 0 1rem 0;
   padding: 5px 5px 5px 10px;
-  width: 20rem;
+  width: 10.75rem;
   border-radius: 5px;
   border: 1px solid black;
 }
 
 #message-me textarea{
-  width: 20rem;
+  min-width: 22rem;
   padding: 1rem;
   border-radius: 5px;
   outline: none;
@@ -654,7 +660,7 @@ article .icon {
 
 footer {
   /* height: 26vh; */
-  margin: 0 1rem 3rem 1rem;
+  padding: 0 1rem 3rem 1rem;
 }
 
 footer p {
