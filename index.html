@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Esio Oboho</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
@@ -17,11 +17,7 @@
   <body>
   <div class="container">
     <div class="main_body"> 
-<!-- 
-    <div class="btn-ctn">
-        <i class="fas fa-moon dark-mode-icon" onclick="darkmode()"></i>
-    </div> 
-     -->
+
     <!----- DESKTOP NAVIGATION ----->
     <nav id="desktop-nav">
       <div class="logo">Esio Oboho</div>
@@ -34,7 +30,8 @@
         </ul>
         <div class="btn-ctn">
           <i class="fas fa-moon dark-light-icon" onclick="darkmode()"></i>
-          <i class="fas fa-sun dark-light-icon" onclick="darkmode()"></i>
+          <!-- <i class="fas fa-sun dark-light-icon" onclick="darkmode()"></i> -->
+          <img class="fas fa-sun light-icon" onclick="darkmode()" src="assets/lighticon.svg">
         </div> 
       </div>
       
@@ -46,7 +43,9 @@
       <div class="top-buttons">
         <div class="btn-ctn">
           <i class="fas fa-moon dark-light-icon" onclick="darkmode()"></i>
-          <i class="fas fa-sun dark-light-icon" onclick="darkmode()"></i>
+          <!-- <i class="fas fa-sun dark-light-icon" onclick="darkmode()"></i> -->
+          <img class="fas fa-sun light-icon" onclick="darkmode()" src="assets/lighticon.svg">
+
         </div>
         <div class="hamburger-menu">
           
@@ -71,23 +70,25 @@
         <img src="./assets/profile-pic.png" alt="profile picture" id="profile_pic" />
       </div>
       <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
+        <p class="section__text__p1">Hey, I'm</p>
         <h1 class="title"><span class="name_span">Esio</span> Oboho</h1>
         <p class="section__text__p2 typing">Web Developer</p>
         <div class="btn-container">
-          <button class="btn btn-color-2" onclick="window.open('./assets/resume-web.pdf')">Download CV</button>
-          <button class="btn btn-color-1" onclick="location.href='#contact'">Contact Info</button>
+          <button class="btn btn-color-2" onclick="window.open('./assets/Esio Oboho - Resume.pdf')">Download CV</button>
+          <button class="btn btn-color-1" onclick="location.href='#contact'">Contact Me</button>
         </div>
         <div id="socials-container">
           <i class="fab fa-linkedin social-icon icon-size" onclick="location.href='https://linkedin.com/in/michael-oboho-68b1a4310'"></i>
           <i class="fab fa-github github-icon icon-size" onclick="location.href='https://github.com/Mgsslayer'"></i>
+          <i class="fab fa-x-twitter icon-size" onclick="location.href='https://x.com/Phantom_CodeX'"></i>
+
         </div>
       </div>
     </section>
 
     <!----- ABOUT SECTION ----->
     <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
+      <!-- <p class="section__text__p1">Get To Know More</p> -->
       <h1 class="title">About Me</h1>
       <div class="section-container">
         <div class="section__pic-container">
@@ -98,7 +99,7 @@
             <div class="details-container">
               <img src="./assets/experience.png" alt="Experience icon" class="icon"/>
               <h3>Experience</h3>
-              <p>4+ years <br />Web Development</p>
+              <p>3+ years <br />Web Development</p>
             </div>
             <div class="details-container">
               <img src="./assets/education.png" alt="Education icon" class="icon"/>
@@ -122,7 +123,7 @@
 
     <!----- EXPERIENCE SECTION ----->
     <section id="experience">
-      <p class="section__text__p1">Explore My</p>
+      <!-- <p class="section__text__p1">Explore My</p> -->
       <h1 class="title">Experience</h1>
       <div class="experience-details-container">
         <div class="about-containers">
@@ -241,16 +242,16 @@
       <h1 class="title">Projects</h1>
       
         <div class="gallerybox">
-            <div class="img-box"><h3>Project One</h3></div>
-            <div class="img-box"><h3>Project Two</h3></div>
-            <div class="img-box"><h3>Project Three</h3></div>
+            <div class="img-box"><span><h3>Mag Beads</h3><a href="https://magbeads.vercel.app/index.html">Preview site</a></span></div>
+            <div class="img-box"><span><h3>Character Counter</h3><a href="#">Preview site</a></span></div>
+            <div class="img-box"><span><h3>Network Configuration</h3><a href="#">Preview site</a></span></div>
             <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'"/>
         </div>
     </section>
 
     <!----- CONTACT SECTION ----->
     <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
+      <!-- <p class="section__text__p1">Get in Touch</p> -->
       <h1 class="title">Contact Me</h1>
       <div class="contact-info-upper-container">
         <div class="contact-info-container">
@@ -265,11 +266,11 @@
         <p id="or">Or</p>
       <div id="message-me">
         <form id="emailForm" action="/send_email" method="post" onclick="email()">
-          <!-- <input id="client-contact" name="client-contact" placeholder="Contact i.e Phone/Email"></input> -->
-          <!-- <label for="subject"></label> -->
-          <input id="subject" name="subject" placeholder="subject" type="text"></input>
-          <!-- <label for="message"></label> -->
-          <textarea id="message" name="message" placeholder="Send a message and leave your contact"></textarea>
+          <div class="dets">
+            <input id="ccontact" name="ccontact" placeholder="Your Contact" type="text"></input>
+            <input id="subject" name="subject" placeholder="Subject" type="text"></input>
+          </div>
+          <textarea id="message" name="message" placeholder="Send me a message"></textarea>
           <button type="submit" id="mess-me" value="Message Me">Message Me</button>
         </form>
       </div>
@@ -288,7 +289,7 @@
           </ul>
         </div>
       </div>
-      <p>Copyright &#169; 2023 Esio Oboho. All Rights Reserved.</p>
+      <p>Copyright &#169; 2025 Esio Oboho. All Rights Reserved.</p>
     </footer>
   </div> 
 </div>

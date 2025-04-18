@@ -19,7 +19,7 @@ exports.handler = async function (event) {
         from: process.env.GOOGLE_MAIL_SENDER,
         to: process.env.GOOGLE_MAIL_RECIEVER,
         subject: data.subject,
-        text: data.message
+        text: `${data.message}\n\nContact Info: ${data.contact}`
     };
 
     try {
