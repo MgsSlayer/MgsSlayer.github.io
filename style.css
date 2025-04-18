@@ -411,6 +411,10 @@ section {
   box-shadow: 5px 5px 1px 0px black;
 }
 
+.text-container p{
+text-align: justify;
+}
+
 .section-container {
   gap: 4rem;
   height: 80%;
