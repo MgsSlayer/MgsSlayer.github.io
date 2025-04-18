@@ -123,13 +123,17 @@
     text-align: justify;
   }
   #message-me textarea{
-    width: 15rem;
+    min-width: 15rem;
   }
   #mess-me{
     margin-bottom: 3rem;
   }
-  #subject{
-    width: auto;
+  .dets{
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  #subject,#ccontact{
+    width: 30%;
   }
   .img-box{
     width: 75px;
