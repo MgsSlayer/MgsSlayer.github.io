@@ -74,7 +74,13 @@ a,
 
 .dark-light-icon {
   font-size: 1.5rem;
-  margin: 0.5rem 0.5rem 0 0;
+  margin: 0.4rem 0.5rem 0 0;
+  margin-right: 2%;
+}
+
+.light-icon{
+  height: 1.8rem;
+  margin: 0.2rem 0.5rem 0 0;
   margin-right: 2%;
 }
 
@@ -536,7 +542,11 @@ article .icon {
     background-position: center;
 }
 
-.img-box h3{
+
+.img-box span{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     color: #fff;
     position: absolute;
     bottom: 0;
@@ -545,12 +555,21 @@ article .icon {
     transition: opacity .5s, bottom .5s;
 }
 
+.img-box span a, .img-box span h3{
+  color: #ffffff;
+  border: 1px solid #80808096;
+  border-radius: 15px;
+  background-color: hsla(0, 0%, 13%, 0.87);
+  padding: 0.5rem;
+  text-decoration: none;
+}
+
 .img-box:hover{
     width: 500px;
     cursor: pointer;
 }
 
-.img-box:hover h3{
+.img-box:hover span{
     opacity: 1;
     bottom: 25px;
 }

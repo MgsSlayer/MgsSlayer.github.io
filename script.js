@@ -33,7 +33,7 @@ createDivs();
 
 // DARK MODE
 function darkmode() {
-  const darkdiv = document.querySelectorAll('body, p, a, h2, button, .menu-links, .span2, .title, .section__text__p1, .details-container, #profile_pic, #message, #subject, #mess-me, #about-pic, .fa-moon, .fa-sun'); 
+  const darkdiv = document.querySelectorAll('body, p, a, h2, button, .menu-links, .span2, .title, .section__text__p1, .details-container, #profile_pic, #message, #subject, #ccontact, #mess-me, #about-pic, .fa-moon, .fa-sun'); 
   const icon = document.querySelector(".dark-mode-icon");
   
   darkdiv.forEach(element => {
@@ -102,6 +102,7 @@ document.addEventListener("DOMContentLoaded", function() {
           event.preventDefault();
 
           const formData = {
+              contact: document.getElementById("ccontact").value,
               subject: document.getElementById("subject").value,
               message: document.getElementById("message").value
           };
