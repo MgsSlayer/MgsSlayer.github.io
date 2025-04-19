@@ -549,7 +549,6 @@ article .icon {
     background-position: center;
 }
 
-
 .img-box span{
     display: flex;
     align-items: center;
@@ -557,7 +556,6 @@ article .icon {
     color: #fff;
     position: absolute;
     bottom: 0;
-    left: 30px;
     opacity: 0;
     transition: opacity .5s, bottom .5s;
 }
@@ -569,6 +567,7 @@ article .icon {
   background-color: hsla(0, 0%, 13%, 0.87);
   padding: 0.5rem;
   text-decoration: none;
+  font-size: 0.8rem;
 }
 
 .img-box:hover{
@@ -578,7 +577,7 @@ article .icon {
 
 .img-box:hover span{
     opacity: 1;
-    bottom: 25px;
+    padding: 1.5rem;
 }
 
 
