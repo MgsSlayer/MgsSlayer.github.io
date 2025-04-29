@@ -268,8 +268,6 @@ section {
 }
 
 #profile_pic{
-  height: 23rem;
-  width: 23rem;
   border-radius: 50%;
   box-shadow: 0 0 20px 5px rgb(235, 235, 255);
 }
