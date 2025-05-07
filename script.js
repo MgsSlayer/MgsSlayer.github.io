@@ -9,13 +9,13 @@ function toggleMenu() {
 
 // CREATE DIVS FOR ANIMATION
 function createDivs() {
-  let container = document.querySelector(".container");
-  let oneDiv = document.createElement("div");
+  const container = document.querySelector(".container");
+  const oneDiv = document.createElement("div");
   
   oneDiv.classList.add("div_anim");
  
   for (let i = 0; i < 10; i++) {
-    let twoDiv = document.createElement("div");
+    const twoDiv = document.createElement("div");
     twoDiv.classList.add("anim_div");
     oneDiv.appendChild(twoDiv);
   }
@@ -37,7 +37,7 @@ function darkmode() {
 
 // MAILER STYLING AND ALERT
 document.addEventListener("DOMContentLoaded", function() {
-  let emailForm = document.getElementById("emailForm");
+  const emailForm = document.getElementById("emailForm");
 
   // Prevent multiple event listeners from being added
   if (!emailForm.dataset.listener) {
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
                   body: JSON.stringify(formData)
               });
 
-              const alertBox = document.getElementById("alertBox");
+              let alertBox = document.getElementById("alertBox");
 
               if (!response.ok) {
                   throw new Error("Failed to send message.");
@@ -71,11 +71,12 @@ document.addEventListener("DOMContentLoaded", function() {
               
               document.getElementById("subject").value = "";
               document.getElementById("message").value = "";
+              document.getElementById("ccontact").value = "";
 
               // Set timeout AFTER updating the alertBox
               setTimeout(() => {
                   alertBox.textContent = "";
-                  alertBox.classList.remove("show"); // Optionally remove a visibility class
+                  alertBox.classList.remove("show");
               }, 5000);
 
           } catch (error) {
@@ -83,7 +84,6 @@ document.addEventListener("DOMContentLoaded", function() {
               alertBox.innerText = "Error: " + error.message;
               alertBox.style.color = "red";
 
-              // Clear error message after 5 seconds
               setTimeout(() => {
                   alertBox.textContent = "";
                   alertBox.classList.remove("show");
@@ -132,4 +132,4 @@ let rotate = anime({
   duration: 7000,
 });
 
-console.log(window.anime);
+//console.log(window.anime);

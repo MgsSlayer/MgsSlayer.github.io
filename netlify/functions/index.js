@@ -7,7 +7,7 @@ exports.handler = async function (event) {
 
     const data = JSON.parse(event.body);
 
-    let transporter = nodemailer.createTransport({
+    const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
             user: process.env.GOOGLE_MAIL_SENDER,
@@ -15,7 +15,7 @@ exports.handler = async function (event) {
         }
     });
 
-    let mailOptions = {
+    const mailOptions = {
         from: process.env.GOOGLE_MAIL_SENDER,
         to: process.env.GOOGLE_MAIL_RECIEVER,
         subject: data.subject,
@@ -35,13 +35,3 @@ exports.handler = async function (event) {
         };
     }
 };
-
-
-// document.getElementById("emailForm").addEventListener("submit", async (e) => {
-//       e.preventDefault();
-//     });
-  
-
-// document.getElementById("emailForm").addEventListener("submit", async (e) => {
-//       e.preventDefault();
-//     });
