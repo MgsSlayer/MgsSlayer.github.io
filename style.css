@@ -11,6 +11,32 @@ body {
   font-family: "Space Grotesk";
   overflow: hidden auto;
   transition: all 0.3s ease;
+
+
+  margin: 0;
+  min-height: 100vh;
+
+ /* base white */
+  background: #ffffff;
+
+  /* layered gradients: circles + streak */
+  background-image: 
+    radial-gradient(circle at 30% 30%, #FFE5D1 6%, rgba(255, 229, 209, 0.4) 16%, transparent 36%), /* circle glow */
+    radial-gradient(circle at 70% 60%, #FFF1E6 7%, rgba(255, 241, 230, 0.3) 20%, transparent 40%), /* circle glow */
+    linear-gradient(120deg, rgba(255, 229, 209, 0.2) 15%, transparent 60%); /* soft streak */
+
+  background-repeat: no-repeat;
+  background-size: 200% 200%;
+
+  animation: moveGlows 40s ease-in-out infinite alternate;
+}
+
+@keyframes moveGlows {
+  0%   { background-position: 20% 30%, 70% 60%, 50% 50%; }
+  25%  { background-position: 70% 20%, 30% 80%, 80% 40%; }
+  50%  { background-position: 80% 70%, 50% 30%, 20% 60%; }
+  75%  { background-position: 40% 80%, 80% 50%, 60% 20%; }
+  100% { background-position: 10% 50%, 60% 70%, 30% 40%; }
 }
 
 html {
