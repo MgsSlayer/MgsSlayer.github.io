@@ -295,7 +295,7 @@ section {
 
 #profile_pic{
   border-radius: 50%;
-  box-shadow: 0 0 20px 5px rgb(235, 235, 255);
+  /* box-shadow: 0 0 20px 5px rgb(235, 235, 255); */
 }
 
 .section__text {
@@ -720,8 +720,20 @@ footer p {
 
 /* DARKMODE STYLING */
 
-body.darkmode {
+/* body.darkmode {
   background-color: #212121;
+  color: #ffffff;
+} */
+
+body.darkmode {
+ /* background-color: #212121;  */
+ background-color: #121212;
+  
+  /* Slightly more defined amber glows */
+  background-image: 
+    radial-gradient(circle at 30% 30%, rgba(255, 165, 0, 0.25) 0%, rgba(255, 165, 0, 0.08) 15%, transparent 40%), 
+    radial-gradient(circle at 70% 60%, rgba(255, 140, 0, 0.2) 0%, rgba(255, 140, 0, 0.05) 20%, transparent 45%), 
+    linear-gradient(120deg, rgba(255, 180, 100, 0.04) 10%, transparent 50%);
   color: #ffffff;
 }
 
