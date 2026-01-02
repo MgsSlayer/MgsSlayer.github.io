@@ -3,3 +3,4 @@ assets/font-awesome/
 # Local Netlify folder
 .netlify
 .qodo
+.node_modules
