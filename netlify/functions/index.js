@@ -5,7 +5,22 @@ exports.handler = async function (event) {
         return { statusCode: 405, body: "Method Not Allowed" };
     }
 
-    const data = JSON.parse(event.body);
+    let data;
+    try {
+        data = JSON.parse(event.body);
+    } catch (error) {
+        return { statusCode: 400, body: JSON.stringify({ success: false, error: "Invalid request body." }) };
+    }
+
+    const contact = (data.contact || "").trim();
+    const subject = (data.subject || "").trim();
+    const message = (data.message || "").trim();
+
+    const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contact);
+    const isPhone = /^[+\d][\d\s\-()]{6,}$/.test(contact);
+    if (!contact || (!isEmail && !isPhone) || !subject || subject.length < 2 || !message || message.length < 10) {
+        return { statusCode: 400, body: JSON.stringify({ success: false, error: "Invalid contact, subject, or message." }) };
+    }
 
     const transporter = nodemailer.createTransport({
         service: "gmail",
@@ -18,8 +33,8 @@ exports.handler = async function (event) {
     const mailOptions = {
         from: process.env.GOOGLE_MAIL_SENDER,
         to: process.env.GOOGLE_MAIL_RECIEVER,
-        subject: data.subject,
-        text: `${data.message}\n\nContact Info: ${data.contact}`
+        subject: subject,
+        text: `${message}\n\nContact Info: ${contact}`
     };
 
     try {
