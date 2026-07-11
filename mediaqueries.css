@@ -10,7 +10,7 @@
   #projects {
     height: fit-content;
   }
-  #contact, #experience {
+  #contact, #stack {
   margin-top: 6rem;
   }
 }
@@ -25,9 +25,31 @@
   .dark-mode-icon {
     font-size: 1.8rem;
   }
-  #experience,
-  .experience-details-container {
+  #stack,
+  #activity,
+  .stack-container {
     margin-top: 2rem;
+  }
+  .stack-row {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  .timeline::before,
+  .timeline::after {
+    left: 0.6rem;
+  }
+  .timeline-entry {
+    grid-template-columns: 1fr;
+    row-gap: 0.75rem;
+    padding-left: 2rem;
+  }
+  .timeline-date,
+  .timeline-entry.left .timeline-content,
+  .timeline-entry.right .timeline-content {
+    grid-column: 1;
+  }
+  .timeline-date {
+    justify-self: start;
   }
   #profile,
   .section-container {
@@ -95,8 +117,11 @@
   .nav-links li a {
     font-size: 1rem;
   }
-  .experience-sub-title {
-    font-size: 1.25rem;
+  .stack-label p {
+    font-size: 1.75rem;
+  }
+  .stack-items {
+    gap: 1rem 1.5rem;
   }
   .logo {
     font-size: 1.5rem;

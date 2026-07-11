@@ -1,6 +1,19 @@
+.env
+*.env
+secrets.yaml
+secrets/
+node_modules/
+__pycache__/
+*.pyc
+*.pem
+*.key
+*.crt
+kubeconfig
+.DS_Store
+
 test.html
 assets/font-awesome/
 # Local Netlify folder
 .netlify
 .qodo
-.node_modules
+deno.lock
