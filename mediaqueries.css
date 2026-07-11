@@ -47,8 +47,13 @@
   .timeline-entry.left .timeline-content,
   .timeline-entry.right .timeline-content {
     grid-column: 1;
+    grid-row: auto;
+  }
+  .timeline-content {
+    order: 1;
   }
   .timeline-date {
+    order: 2;
     justify-self: start;
   }
   #profile,
