@@ -293,7 +293,7 @@ document.querySelectorAll('.reveal-group').forEach(group => revealObserver.obser
 
   const GITHUB_SCALE = ['#9be9a8', '#40c463', '#30a14e', '#216e39'];
   const GITLAB_SCALE = ['#fde0d0', '#fbb090', '#fc6d26', '#c94f0f'];
-  const LABEL_HEIGHT = 18;
+  const LABEL_HEIGHT = 30;
   const LABEL_WIDTH = 26;
   const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   const DAY_LABELS = { 1: 'Mon', 3: 'Wed', 5: 'Fri' };
@@ -347,13 +347,20 @@ document.querySelectorAll('.reveal-group').forEach(group => revealObserver.obser
     ctx.textBaseline = 'top';
 
     let lastMonth = null;
+    let lastYear = null;
     days.forEach((day, i) => {
       const cellIndex = leadingBlanks + i;
       const col = Math.floor(cellIndex / 7);
-      const month = new Date(day.date).getMonth();
+      const date = new Date(day.date);
+      const month = date.getMonth();
+      const year = date.getFullYear();
       if (month !== lastMonth) {
-        ctx.fillText(MONTHS[month], col * STEP, 0);
+        if (year !== lastYear) {
+          ctx.fillText(String(year), col * STEP, 0);
+        }
+        ctx.fillText(MONTHS[month], col * STEP, 15);
         lastMonth = month;
+        lastYear = year;
       }
     });
 
