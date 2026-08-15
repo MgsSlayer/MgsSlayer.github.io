@@ -746,7 +746,7 @@ body.darkmode .timeline-skills span {
     height: 500px;
     margin: 10px;
     border-radius: 50px;
-    background: url(/assets/project-1.png);
+    background: url(/assets/reservations.png);
     background-size: cover;
     background-position: center;
     position: relative;
@@ -755,19 +755,19 @@ body.darkmode .timeline-skills span {
 }
 
 .img-box:nth-child(2){
-    background: url(assets/project-2.jpg);
+    background: url(assets/tour-rider-fleet.png);
     background-size: cover;
     background-position: center;
 }
 
 .img-box:nth-child(3){
-    background: url(assets/project-3.png);
+    background: url(assets/project-1.png);
     background-size: cover;
     background-position: center;
 }
 
 .img-box:nth-child(4){
-    background: url(images/img3.jpg);
+    background: url(assets/project-2.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -791,6 +791,12 @@ body.darkmode .timeline-skills span {
   padding: 0.5rem;
   text-decoration: none;
   font-size: 0.8rem;
+}
+
+.img-box span a{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
 }
 
 .img-box:hover{
